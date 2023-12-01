@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import Furniture, Blog , Services, Teams, Testimonials
+from .models import Furniture, Blog , Services, Teams, Testimonials, Contact_info
 
 # Create your views here.
 def index(request):
@@ -31,7 +31,9 @@ def checkout(request):
     return render(request, "checkout.html")
 
 def contact(request):
+    # contact_info = Contact_info.object.all()
     return render(request, "contact.html")
+    
 
 def services(request):
     testimonials = Testimonials.objects.all()
@@ -47,5 +49,8 @@ def shop(request):
 
 def thankyou(request):
     return render(request, "thankyou.html")
+
+def terms(request):
+    return render(request, "terms.html")
 
 

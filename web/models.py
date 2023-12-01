@@ -45,3 +45,11 @@ class Testimonials(models.Model):
     
     def __str__(self):
         return self.name
+class Contact_info(models.Model):
+    email = models.EmailField()
+    Location = models.CharField(max_length=150)
+    number = models.IntegerField()
+    img = models.ImageField(upload_to='Contact_info')
+    
+    def __str__(self):
+        return self.email
