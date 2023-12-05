@@ -29,7 +29,7 @@
                     {% for furni in furnitures %}
 		      		<!-- Start Column  -->
 					<div class="col-12 col-md-4 col-lg-3 mb-5">
-						<a class="product-item" href="#">
+						<a class="product-item" href="/web/item/{{furni.id}}">
 							<img src="{{furni.img.url}}", class="img-fluid product-thumbnail">
 							{% if furni.offer %}
 							<div class="spec_offer text-center"> <a href="#">special offer</a> </div>

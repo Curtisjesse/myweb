@@ -7,14 +7,19 @@ def index(request):
     blogs = Blog.objects.all().order_by('?')[:3]
     services = Services.objects.all().order_by('?')[:4]
     furnitures = Furniture.objects.all().order_by('?')[:3]
-    
-    return render(request, "index.html", {'furnitures' : furnitures , 'services' : services, 'blogs': blogs , 'testimonials': testimonials })
+    context = {
+        'furnitures' : furnitures , 
+        "nav" : 'home',
+        'services' : services, 
+        'blogs': blogs , 
+        'testimonials': testimonials }
+    return render(request, "index.html", context)
 
 def about(request):
     testimonials = Testimonials.objects.all()
     services = Services.objects.all().order_by('?')[:4]
     teams = Teams.objects.all().order_by('?')[:4]
-    return render(request, "about.html",{'teams': teams, 'services':services, 'testimonials': testimonials})
+    return render(request, "about.html",{'teams': teams, 'services':services,'nav':'about', 'testimonials': testimonials})
 
 
 def blog(request):
@@ -22,13 +27,19 @@ def blog(request):
     blogs = Blog.objects.all().order_by('?')
     return render(request, "blog.html", {'blogs' : blogs , 'testimonials': testimonials})
 
-
+def item(request, id):
+    product = Furniture.objects.get(id=id)
+    return render(request, 'card.html', {'product':product})
+    
 def cart(request):
     return render(request, "cart.html")
 
 
 def checkout(request):
     return render(request, "checkout.html")
+
+def login(request):
+    return render(request, "login.html")
 
 def contact(request):
     # contact_info = Contact_info.object.all()
@@ -45,7 +56,7 @@ def services(request):
 def shop(request):
     
      furnitures = Furniture.objects.all().order_by('?')[:12]
-     return render(request, "shop.html", {'furnitures' : furnitures })
+     return render(request, "shop.html", {'furnitures' : furnitures,'nav':'shop' })
 
 def thankyou(request):
     return render(request, "thankyou.html")

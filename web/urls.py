@@ -30,5 +30,7 @@ urlpatterns = [
     path('services/', views.services, name='services'),
     path('shop/', views.shop, name='shop'),
     path('thankyou/', views.thankyou, name='thankyou'),
+    path('item/<int:id>', views.item, name='item'),
     path('terms/', views.terms, name='terms'),
+    path('login/', views.login, name='login'),
 ]
