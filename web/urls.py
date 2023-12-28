@@ -32,5 +32,5 @@ urlpatterns = [
     path('thankyou/', views.thankyou, name='thankyou'),
     path('item/<int:id>', views.item, name='item'),
     path('terms/', views.terms, name='terms'),
-    path('login/', views.login, name='login'),
+    path('register/', views.register, name='register'),
 ]
