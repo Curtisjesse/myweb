@@ -1,11 +1,74 @@
-{% load static %}
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SIGN UP</title>
+</head>
+<body>
+    {% csrf_token %}
+
+    
+            <div class="container" id="container">
+                <div class="form-container sign-up">
+                    <form>
+                        <h1>Create Account</h1>
+                        <div class = "social-icons">
+                            <a href="#"class = "icons"><i class="fa-brands fa-google-plus-g"></i></a>
+                            <a href="#"class = "icons"><i class="fa-brands fa-facebook-f"></i></a>
+                            <a href="#"class = "icons"><i class="fa-brands fa-github"></i></a>
+                            <a href="#"class = "icons"><i class="fa-brands fa-linkedin-in"></i></a>
+                        </div>
+                        <span>or use your email for registration</span>
+                        <input type="text" placeholder="Name">
+                        <input type="email" placeholder="Email">
+                        <input type="password" placeholder="Password">
+                        <button>Sign Up</button>
+                    </form>
+                </div>
+            </div>
+            <div class="form-container sign-in">
+                <form>
+                    <h1>Sign In {{name}} </h1>
+                    <div class = "social-icons">
+                        <a href="#"class = "icons"><i class="fa-brands fa-google-plus-g"></i></a>
+                        <a href="#"class = "icons"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#"class = "icons"><i class="fa-brands fa-github"></i></a>
+                        <a href="#"class = "icons"><i class="fa-brands fa-linkedin-in"></i></a>
+                    </div>
+                    <span>or use your email for registration</span>
+                    <input type="text" placeholder="Name">
+                    <input type="email" placeholder="Email">
+                    <input type="password" placeholder="Password">
+                    <button>Sign In</button>
+                </form>
+            </div>
+            <div class="toggle-container">
+                <div class="toggle">
+                    <div class="toggle-panel toggle-left">
+                        <h1>welcome back</h1>
+                        <p>Enter your personal details to use all of site features</p>
+                        <button class="hidden" id="login">Sign In</button>
+                    </div>
+                    <div class="toggle-panel toggle-right">
+                        <h1>Hello Friend</h1>
+                        <p>Register with your personal details to use all of site features</p>
+                        <button class="hidden" id="register">Sign Up</button>
+                    </div>
+                </div>
+            </div> 
+
+
+</body>
+</html> -->
+ {% load static %}
 <!doctype html>
 <html lang="en">
 
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Free Tour and Travel Website Tempalte | Smarteyeapps.com</title>
+    <title>SIGN UP FORM</title>
     <link rel="shortcut icon" href="{% static 'images/fav.png' %}" type="image/x-icon">
     <link href="{% static 'https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i&display=swap' %}" rel="stylesheet">
     <link rel="shortcut icon" href="{% static 'images/fav.jpg' %}">
@@ -37,29 +100,38 @@
                                     <img src="{%static 'images/art-direction.png' %}" alt="">
                                  </div>
                             </div>
-                             <div class="col-md-7 detail-box">
+                             <div class="col-md-6 detail-box">
                                
-                                <div class="detailsh col-lg-7 col-md-10 col-sm-7 col-11 mx-auto">
+                                <div class="detailsh col-lg-5 col-md-9 col-sm-5 col-9 mx-auto">
                                       <img class="logo" src="{%static 'images/logo.png' %}" alt=""> 
                                       
                                       <div class="row form-ro no-margin">
-                                          <input type="text" placeholder="Username" class="form-control form-control-sm">
+                                          <input type="text" name= "first_name" placeholder="First name" class="form-control form-control-sm">
+                                      </div>
+                                      <div class="row form-ro no-margin">
+                                          <input type="text" name= "second_name" placeholder="Second Name" class="form-control form-control-sm">
+                                      </div>
+                                      <div class="row form-ro no-margin">
+                                          <input type="text" name= "user_name" placeholder="Username" class="form-control form-control-sm">
+                                      </div>
+                                      <div class="row form-ro no-margin">
+                                          <input type="email" name= "email"  placeholder="email" class="form-control form-control-sm">
+                                      </div>
+                                      <div class="row form-ro no-margin">
+                                          <input type="password" name= "password" placeholder="password" class="form-control form-control-sm">
                                       </div>
                                       
                                        <div class="row form-ro no-margin">
-                                          <input type="password" placeholder="Password" class="form-control form-control-sm">
+                                          <input type="password" name= "confirm_password"  placeholder="confirm Password" class="form-control form-control-sm">
                                       </div>
                                     <div class="row form-ro fgbh">
-                                        <div class="col-6">
-                                            <a href="">Forget Password</a>
-                                        </div>
-                                        <div class="col-6">
-                                            <button class="btn btn-sm btn-primary">Sign In</button>
+                                        <div class="col-16">
+                                            <button class="btn btn-sm btn-primary">Sign Up</button>
                                         </div>
                                     </div>
                                     <div class="row form-ro hlio fgbh">
-                                        <div class="col-md-12">
-                                            <p>Dont have Account <a href="{% url 'accounts:sign_up' %}">Sign Up now</a> </p>
+                                        <div class="col-md-14">
+                                            <p>have an Account <a href="{% url 'accounts:register' %}">Sign In</a> </p>
                                         </div>
                                         
                                     </div>
@@ -110,4 +182,3 @@
     <script src="{%static 'plugins/slider/js/owl.carousel.min.js' %}"></script>
     <script src="{%static 'js/script.js' %}"></script>
 </html>
-

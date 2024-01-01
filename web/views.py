@@ -47,6 +47,8 @@ def cart(request):
 def checkout(request):
     return render(request, "checkout.html")
 
+
+
 def register(request):
     return render(request, "register.html",{'nav':'register'})
 
