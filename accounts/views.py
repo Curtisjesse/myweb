@@ -8,19 +8,21 @@ def register(request):
     
     if request.method == 'POST':
             
-        first_name = request.POST['first_name']
-        second_name = request.POST['second_name']
+        
         username = request.POST['user_name']
         email = request.POST['email']
         password1 = request.POST['password']
         password2 = request.POST['confirm_password']
         
-        user = User.objects.create_user(username=username, password=password1, email=email, first_name= first_name)
+        if password1 != password2:
+            return messages(request, "password didn't match")
+        
+        user = User.objects.create_user(username=username, password=password1, email=email)
         user.save()
         print('user created')
         return redirect('/')
     else: 
-         return render(request, 'register.html')
+         return render(request, 'sign_up.html')
 
 def sign_in(request):
     
